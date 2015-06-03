@@ -1,25 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0t-eL-H5z">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Stopwatch" id="5dp-Nn-d8Z">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="uJl-ZW-Usj">
+                                            <connections>
+                                                <action selector="pause:" destination="vXZ-lx-hvc" id="TgC-Gd-ZEa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JjM-Mm-Pgt">
+                                <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="sUn-eq-l7r">
+                                        <connections>
+                                            <action selector="stop:" destination="vXZ-lx-hvc" id="RPY-Vb-XdG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nN4-Ik-EQa"/>
+                                    <barButtonItem systemItem="play" id="6iR-nK-wgQ">
+                                        <connections>
+                                            <action selector="play:" destination="vXZ-lx-hvc" id="py6-6W-W03"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd7-i1-Ylp">
+                                <rect key="frame" x="189" y="224" width="223" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="3AQ-aO-lAt"/>
+                                    <constraint firstAttribute="width" constant="223" id="ylW-9z-gcI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JjM-Mm-Pgt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="24O-fq-pIp"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="2rN-dQ-m5b"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JjM-Mm-Pgt" secondAttribute="bottom" id="3aX-d3-SkE"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="4AJ-y5-oAu"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="5Mh-yw-nzt"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JjM-Mm-Pgt" secondAttribute="bottom" constant="8" id="8Dv-Um-a7J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JjM-Mm-Pgt" secondAttribute="trailing" constant="-16" id="H2o-Lb-8qu"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="Jr5-iF-DRI"/>
+                            <constraint firstItem="JjM-Mm-Pgt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="KbF-0X-Mdu"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="LTt-Ek-AQj"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="RRf-zf-qWG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JjM-Mm-Pgt" secondAttribute="trailing" constant="-16" id="Yh4-wJ-tSk"/>
+                            <constraint firstItem="l0t-eL-H5z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Z57-LO-gM3"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="ba1-yM-HMZ"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="dxf-tV-ohm"/>
+                            <constraint firstAttribute="centerX" secondItem="l0t-eL-H5z" secondAttribute="centerX" id="eIM-SO-C5W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l0t-eL-H5z" secondAttribute="trailing" constant="-16" id="fl1-Cp-4bf"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="gFP-ht-qn7"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="m3c-6W-Eze"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="oBw-eB-r39"/>
+                            <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="rjM-nP-qGD"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="uBg-QT-OKg"/>
+                            <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="xXu-vD-Kv4"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="5D8-V3-Ytz"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="Nd7-i1-Ylp" id="IQg-SI-4Em"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="49" y="-13"/>
         </scene>
     </scenes>
 </document>
