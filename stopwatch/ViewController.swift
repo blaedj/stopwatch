@@ -8,18 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var timeLabel: UILabel!
 
     @IBOutlet weak var toolbar: UIToolbar!
    
+    @IBOutlet weak var lapsTable: UITableView!
+ 
     var timer = NSTimer()
     var counter = 0.0
     var playPauseButton = UIBarButtonItem()
     var clearButton = UIBarButtonItem()
     var flexSpacer = UIBarButtonItem()
-    
+    var laps = [Int: Double]()
     func updateTime() {
         counter = round((counter + 0.1) * 10) / 10
         print(counter)
@@ -50,8 +52,25 @@ class ViewController: UIViewController {
             timer.invalidate()
             togglePlayPauseButton(UIBarButtonSystemItem.Play)
         }
+        laps[laps.count + 1] = counter
         counter = 0
         timeLabel.text = "0.0"
+        lapsTable.reloadData()
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return laps.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        var lapText = "Lap "
+        lapText += String(indexPath.row + 1)
+        lapText += ": "
+        lapText += String(stringInterpolationSegment: laps[indexPath.row + 1]!)
+        lapText += " seconds"
+        cell.textLabel?.text = lapText
+        return cell
     }
     
     override func viewDidLoad() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -37,6 +37,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-Dh-Baf">
+                                <rect key="frame" x="150" y="328" width="300" height="171"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="T0R-11-mhh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0R-11-mhh" id="4hF-EE-H6R">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="9yi-10-gj8"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="COw-FE-yB9"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -45,15 +61,18 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JjM-Mm-Pgt" secondAttribute="bottom" id="3aX-d3-SkE"/>
                             <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="4AJ-y5-oAu"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="5Mh-yw-nzt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kbd-Dh-Baf" secondAttribute="trailing" constant="30" id="5tl-lB-g1R"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JjM-Mm-Pgt" secondAttribute="bottom" constant="8" id="8Dv-Um-a7J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjM-Mm-Pgt" secondAttribute="trailing" constant="-16" id="H2o-Lb-8qu"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="Jr5-iF-DRI"/>
                             <constraint firstItem="JjM-Mm-Pgt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="KbF-0X-Mdu"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="LTt-Ek-AQj"/>
+                            <constraint firstItem="kbd-Dh-Baf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="OhB-ns-MF9"/>
                             <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="RRf-zf-qWG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JjM-Mm-Pgt" secondAttribute="trailing" constant="-16" id="Yh4-wJ-tSk"/>
                             <constraint firstItem="l0t-eL-H5z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Z57-LO-gM3"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="ba1-yM-HMZ"/>
+                            <constraint firstItem="kbd-Dh-Baf" firstAttribute="top" secondItem="Nd7-i1-Ylp" secondAttribute="bottom" constant="1" id="dGY-z4-3MZ"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="dxf-tV-ohm"/>
                             <constraint firstAttribute="centerX" secondItem="l0t-eL-H5z" secondAttribute="centerX" id="eIM-SO-C5W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l0t-eL-H5z" secondAttribute="trailing" constant="-16" id="fl1-Cp-4bf"/>
@@ -61,6 +80,7 @@
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="m3c-6W-Eze"/>
                             <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="oBw-eB-r39"/>
                             <constraint firstAttribute="centerX" secondItem="Nd7-i1-Ylp" secondAttribute="centerX" id="rjM-nP-qGD"/>
+                            <constraint firstItem="JjM-Mm-Pgt" firstAttribute="top" secondItem="kbd-Dh-Baf" secondAttribute="bottom" constant="13" id="tuj-u1-Xte"/>
                             <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="uBg-QT-OKg"/>
                             <constraint firstAttribute="centerY" secondItem="Nd7-i1-Ylp" secondAttribute="centerY" id="xXu-vD-Kv4"/>
                         </constraints>
@@ -69,6 +89,7 @@
                     <navigationItem key="navigationItem" title="Title" id="5D8-V3-Ytz"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="lapsTable" destination="kbd-Dh-Baf" id="SLq-3h-xOh"/>
                         <outlet property="timeLabel" destination="Nd7-i1-Ylp" id="IQg-SI-4Em"/>
                         <outlet property="toolbar" destination="JjM-Mm-Pgt" id="ydu-0Y-y1o"/>
                     </connections>
